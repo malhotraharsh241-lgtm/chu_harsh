@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh | Software Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#f1f5f9;
+  --muted:#94a3b8;
+  --accent:#3b82f6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+nav{
+  position:fixed;
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  background:rgba(15,23,42,0.8);
+  backdrop-filter:blur(12px);
+  z-index:1000;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--muted);
+  margin-left:25px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--text);
+}
+
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:0 20px;
+}
+
+.hero h1{
+  font-size:60px;
+  font-weight:800;
+}
+
+.hero span{
+  color:var(--accent);
+}
+
+.hero p{
+  margin-top:20px;
+  font-size:18px;
+  color:var(--muted);
+}
+
+section{
+  padding:100px 8%;
+  max-width:1000px;
+  margin:auto;
+}
+
+h2{
+  font-size:28px;
+  margin-bottom:40px;
+}
+
+.card{
+  background:var(--card);
+  padding:30px;
+  border-radius:16px;
+  margin-bottom:25px;
+  transition:0.3s;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(255,255,255,0.2);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.skills span{
+  display:inline-block;
+  background:#334155;
+  padding:8px 15px;
+  border-radius:20px;
+  margin:6px;
+  font-size:14px;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Smooth Fade Animation */
+
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div><strong>Harsh</strong></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <h1>Building <span>Scalable Systems</span></h1>
+    <p>Computer Science Student | DSA Enthusiast | Backend Focused</p>
+  </div>
+</div>
+
+<section id="about" class="fade">
+  <h2>About Me</h2>
+  <div class="card">
+    I focus on strong fundamentals — data structures, algorithms, and system thinking.
+    My goal is to build applications that are scalable, maintainable, and efficient.
+  </div>
+</section>
+
+<section id="projects" class="fade">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <strong>Library Management System</strong>
+    <p>
+      Designed structured database schema, implemented fine system,
+      optimized lookup logic, and handled edge cases for issue/return operations.
+    </p>
+  </div>
+
+  <div class="card">
+    <strong>Problem Solving Practice</strong>
+    <p>
+      Solved 200+ DSA problems with focus on improving time complexity and code clarity.
+    </p>
+  </div>
+
+</section>
+
+<section id="skills" class="fade">
+  <h2>Core Skills</h2>
+  <div class="skills">
+    <span>C++</span>
+    <span>Python</span>
+    <span>JavaScript</span>
+    <span>Data Structures</span>
+    <span>Algorithms</span>
+    <span>OOP</span>
+    <span>MySQL</span>
+    <span>Git</span>
+    <span>Linux</span>
+  </div>
+</section>
+
+<section id="contact" class="fade">
+  <h2>Contact</h2>
+  <div class="card">
+    GitHub: github.com/yourusername <br><br>
+    Email: your@email.com
+  </div>
+</section>
+
+<footer>
+  © 2026 Harsh — Built with focus & consistency.
+</footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.2});
+
+faders.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
